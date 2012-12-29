@@ -1,15 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'devise'
-gem 'authority'
+gem 'cancan'
 gem 'rolify'
+gem 'bootstrap-sass'
+gem 'haml'
+gem 'simple_form'
+gem 'figaro'
 
+
+gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "better_errors", ">= 0.2.0", :group => :development
+gem "binding_of_caller", ">= 0.6.8", :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +39,11 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
+
+gem 'cucumber-rails', :group => :test
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

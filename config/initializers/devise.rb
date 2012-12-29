@@ -82,7 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "a40d2cc8409f1e3d18637fa820fcd256e9d7c4acf288330988d2063cb972ae76ea00a9db61e248782bd7c5d88ce3b54654a8b767062a012c116d3680043f0ce8"
+  # config.pepper = "c3b13df83cbcb3f2f59cc762a7e4057bc8ea9f49ffbcb53e7167c5f41d6a832142d8045296b62d28c908eed954358fce62923e189c51a4661de4311f6791f568"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -229,4 +229,7 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
+
+  # The default HTTP method used to sign out a resource. Default is :delete.
+  config.sign_out_via = Rails.env.test? ? :get : :delete
 end

@@ -1,0 +1,5 @@
+%h1 Summer Reads Management Site
+%p Welcome and please sign in above
+- @users.each do |user|
+  %p
+    User: #{link_to user.email, user}

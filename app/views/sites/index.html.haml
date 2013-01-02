@@ -1,0 +1,13 @@
+%h3 Sites
+.span8
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th Site Name
+        %th supervisor
+    %tbody
+      - @sites.each do |site|
+        %tr
+          %td= site.sitename
+          %td= site.supervisor
+

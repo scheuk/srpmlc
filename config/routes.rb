@@ -1,5 +1,7 @@
 Srpmlc::Application.routes.draw do
 
+  get "sites/index"
+
   authenticated :user do
     root :to => 'home#index'
   end

@@ -12,4 +12,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def active_navigation(path)
+    'active' if current_page?(path)
+  end
+
 end

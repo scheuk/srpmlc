@@ -1,0 +1,13 @@
+<%= content_tag_for(:tr, site_record) do %>
+    <td><%= site_record.site.sitename %></td>
+    <td><%= site_record.user.email %></td>
+    <td><%= site_record.date %></td>
+    <td><%= site_record.tc %></td>
+    <td><%= site_record.nc %></td>
+    <td><%= site_record.br %></td>
+    <td><%= site_record.ea %></td>
+    <td><%= site_record.bd %></td>
+    <td><%= link_to 'Show', site_site_record_path(@site, site_record) %></td>
+    <td><%= link_to 'Edit', edit_site_site_record_path(@site, site_record) %></td>
+    <td><%= link_to 'Destroy', [@site, site_record], method: :delete, remote: true %></td>
+<% end %>

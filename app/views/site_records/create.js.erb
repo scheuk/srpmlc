@@ -1,0 +1,6 @@
+<% if @site_record.new_record? %>
+  $('input#site_record_date').effect('highlight', {color: 'red'});
+<% else %>
+  $('#site_records_table').find('tbody:last').append("<%= escape_javascript(render @site_record) %>");
+  $('#<%= dom_id(@site_record) %>').effect('highlight');
+<% end %>

@@ -1,7 +1,5 @@
 Srpmlc::Application.routes.draw do
 
-  get "sites/index"
-
   authenticated :user do
     root :to => 'home#index'
   end
@@ -9,6 +7,10 @@ Srpmlc::Application.routes.draw do
 
   devise_for :users
   resources :users
+
+  resources :sites do
+    resources :site_records
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

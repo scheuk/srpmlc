@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Site:</b>
+  <%= @site_record.site %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @site_record.user %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @site_record.date %>
+</p>
+
+<p>
+  <b>Tc:</b>
+  <%= @site_record.tc %>
+</p>
+
+<p>
+  <b>Nc:</b>
+  <%= @site_record.nc %>
+</p>
+
+<p>
+  <b>Br:</b>
+  <%= @site_record.br %>
+</p>
+
+<p>
+  <b>Ea:</b>
+  <%= @site_record.ea %>
+</p>
+
+<p>
+  <b>Bd:</b>
+  <%= @site_record.bd %>
+</p>
+
+
+<%= link_to 'Edit', edit_site_site_record_path(@site, @site_record) %> |
+<%= link_to 'Back', site_site_records_path(@site) %>

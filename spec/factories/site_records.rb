@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :site_record do
     site nil
     user nil
-    date "2013-01-01"
+    date "2013-01-05"
     tc 1
     nc 1
     br 1

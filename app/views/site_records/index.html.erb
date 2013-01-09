@@ -1,0 +1,44 @@
+<h1 xmlns="http://www.w3.org/1999/html">Daily Site Information</h1>
+
+<table class="table table-striped" id="site_records_table">
+  <tr>
+    <th>Site</th>
+    <th>User</th>
+    <th>Date</th>
+    <th>Total Children</th>
+    <th>New Children</th>
+    <th>Books Read</th>
+    <th>Enrichment Activities</th>
+    <th>Books Donated</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tbody>
+  <%= render @site_records %>
+  </tbody>
+</table>
+
+<br />
+
+<%= form_for([@site, SiteRecord.new], remote: true) do |f| %>
+    <div class="field" >
+      <%= f.label :date %>
+      <%= f.date_select :date %><br />
+      <%= f.label "Total Children" %>
+      <%= f.number_field :tc %><br />
+      <%= f.label "New Children" %>
+      <%= f.number_field :nc %><br />
+      <%= f.label "Books Read" %>
+      <%= f.number_field :br %><br />
+      <%= f.label "Enrichment Activities" %>
+      <%= f.number_field :ea %><br />
+      <%= f.label "Books Donated" %>
+      <%= f.number_field :bd %><br />
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'New Site record', new_site_site_record_path(@site) %>

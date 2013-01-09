@@ -2,8 +2,8 @@
   %li{:class => active_navigation(root_path)}
     = link_to "Home", root_path, :class => 'brand'
   - if user_signed_in?
-    %li{:class => active_navigation(sites_index_path)}
-      = link_to('Sites', sites_index_path)
+    %li{:class => active_navigation(sites_path)}
+      = link_to('Sites', sites_path)
       - if current_user.has_role? :admin
         %li{:class => active_navigation(users_path)}
           = link_to('Admin', users_path)

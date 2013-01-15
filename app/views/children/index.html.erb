@@ -1,0 +1,31 @@
+<% content_for :sidebar do %>
+    <h1>Sites</h1>
+    <%= link_to @site.sitename, site_children_path(@site) %>
+<% end %>
+
+<h1>Your Children at <%= @site.sitename %></h1>
+
+<table class="table table-striped" id="child_records_table">
+  <tr>
+    <th>Site</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tbody>
+  <%= render @children %>
+  </tbody>
+</table>
+
+<br />
+<%= form_for([@site, @child], remote: true) do |f| %>
+      <%= f.label "First Name" %>
+      <%= f.text_field :first %>
+      <%= f.label "Last Name" %>
+      <%= f.text_field :last %>
+      <%= f.label "Age" %>
+      <%= f.number_field :age %>
+      <%= f.submit %>
+<% end %>
+

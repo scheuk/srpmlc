@@ -1,4 +1,9 @@
-<h1 xmlns="http://www.w3.org/1999/html">Daily Site Information</h1>
+<% content_for :sidebar do %>
+    <h1>Sites</h1>
+    <%= link_to @site.sitename, site_site_records_path(@site) %>
+<% end %>
+
+<h1>Daily Site Information for <%= @site.sitename %></h1>
 
 <table class="table table-striped" id="site_records_table">
   <tr>
@@ -12,7 +17,6 @@
     <th>Books Donated</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
   <tbody>
   <%= render @site_records %>
@@ -20,25 +24,26 @@
 </table>
 
 <br />
-
-<%= form_for([@site, SiteRecord.new], remote: true) do |f| %>
-    <div class="field" >
-      <%= f.label :date %>
-      <%= f.date_select :date %><br />
-      <%= f.label "Total Children" %>
-      <%= f.number_field :tc %><br />
-      <%= f.label "New Children" %>
-      <%= f.number_field :nc %><br />
-      <%= f.label "Books Read" %>
-      <%= f.number_field :br %><br />
-      <%= f.label "Enrichment Activities" %>
-      <%= f.number_field :ea %><br />
-      <%= f.label "Books Donated" %>
-      <%= f.number_field :bd %><br />
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+<table class="table">
+<%= form_for([@site, @site_record], remote: true) do |f| %>
+      <tr>
+      <th><%= f.label :date %></th>
+      <th><%= f.label "Total Children" %></th>
+      <th><%= f.label "New Children" %></th>
+      <th><%= f.label "Books Read" %></th>
+      <th><%= f.label "Enrichment Activities" %></th>
+      <th><%= f.label "Books Donated" %></th>
+      <th></th>
+      </tr>
+      <tr>
+      <td><%= f.text_field :date, value: Date.today.strftime('%Y-%m-%d'), :class => 'input-small datepicker' %></td>
+      <td><%= f.number_field :tc, class: "input-small"%></td>
+      <td><%= f.number_field :nc, class: "input-small" %></td>
+      <td><%= f.number_field :br, class: "input-small" %></td>
+      <td><%= f.number_field :ea, class: "input-small" %></td>
+      <td><%= f.number_field :bd, class: "input-small" %></td>
+      <td><%= f.submit %></td>
+      </tr>
 <% end %>
+</table>
 
-<%= link_to 'New Site record', new_site_site_record_path(@site) %>

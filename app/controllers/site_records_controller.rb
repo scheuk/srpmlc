@@ -3,7 +3,6 @@ class SiteRecordsController < ApplicationController
   # GET /site_records
   # GET /site_records.json
   def index
-    @site_records = @site.site_records.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,30 +12,33 @@ class SiteRecordsController < ApplicationController
 
   # GET /site_records/1
   # GET /site_records/1.json
-  def show
-    @site_record = @site.site_records.find(params[:id])
+  #def show
+  #  @site_record = @site.site_records.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @site_record }
-    end
-  end
+  #  respond_to do |format|
+  #    format.html # show.html.erb
+  #    format.json { render json: @site_record }
+  #  end
+  #end
 
   # GET /site_records/new
   # GET /site_records/new.json
-  def new
-    @site_record = @site.site_records.new
-    @site_record.user = current_user
+#  def new
+#    @site_record = @site.site_records.new
+#    @site_record.user = current_user
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @site_record }
-    end
-  end
+#    respond_to do |format|
+#      format.html # new.html.erb
+#      format.json { render json: @site_record }
+#    end
+#  end
 
   # GET /site_records/1/edit
   def edit
     @site_record = @site.site_records.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /site_records
@@ -64,12 +66,13 @@ class SiteRecordsController < ApplicationController
 
     respond_to do |format|
       if @site_record.update_attributes(params[:site_record])
-        format.html { redirect_to [@site, @site_record], notice: 'Site record was successfully updated.' }
+        format.html { redirect_to action: "index", notice: 'Site record was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @site_record.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -88,5 +91,7 @@ class SiteRecordsController < ApplicationController
 
   def load_site
     @site = Site.find(params[:site_id])
+    @site_records = @site.site_records.all
+    @site_record = @site.site_records.new
   end
 end

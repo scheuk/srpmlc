@@ -1,18 +1,11 @@
-<%= simple_form_for([@site, @site_record]) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%# f.association :site, label_method: :sitename %>
-    <%# f.association :user, label_method: :email %>
-    <%= f.input :date %>
-    <%= f.input :tc, label: "Total Children" %>
-    <%= f.input :nc, label: "New Children" %>
-    <%= f.input :br, label: "Books Read" %>
-    <%= f.input :ea, label: "Extra Achievments" %>
-    <%= f.input :bd, label: "Books Donated" %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= form_for [@site, @site_record] do |f| %>
+    <td></td>
+    <td><%= f.text_field :date, class: 'input-small datepicker' %></td>
+    <td><%= f.number_field :tc, class: "input-small" %></td>
+    <td><%= f.number_field :nc, class: "input-small" %></td>
+    <td><%= f.number_field :br, class: "input-small" %></td>
+    <td><%= f.number_field :ea, class: "input-small" %></td>
+    <td><%= f.number_field :bd, class: "input-small" %></td>
+    <td><%= f.submit %></td>
 <% end %>
+

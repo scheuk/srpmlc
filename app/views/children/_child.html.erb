@@ -1,0 +1,7 @@
+<%= content_tag_for(:tr, child) do %>
+    <td><%= child.site.sitename %></td>
+    <td><%= child.first %> <%= child.last %></td>
+    <td><%= child.age %></td>
+    <td><%= link_to 'Edit', edit_site_child_path(@site, child), remote: true %></td>
+    <td><%= link_to 'Destroy', [@site, child], method: :delete, remote: true %></td>
+<% end %>

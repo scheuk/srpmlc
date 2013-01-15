@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'haml'
 gem 'simple_form'
 gem 'figaro'
+gem 'bootstrap-datepicker-rails'
 
 
 gem "quiet_assets", ">= 1.0.1", :group => :development

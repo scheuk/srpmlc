@@ -14,10 +14,12 @@
         .container-fluid
           = render 'layouts/navigation'
     #main{:role => "main"}
-      .container
+      .container-fluid
         .content
-          .row
-            .span12
+          .row-fluid
+            .span1
+              = yield :sidebar
+            .span11
               = render 'layouts/messages'
               = yield
           %footer

@@ -1,7 +1,3 @@
-<%= content_tag_for(:tr, child) do %>
-    <td><%= child.site.sitename %></td>
-    <td><%= child.first %> <%= child.last %></td>
-    <td><%= child.age %></td>
-    <td><%= link_to 'Edit', edit_site_child_path(@site, child), remote: true %></td>
-    <td><%= link_to 'Destroy', [@site, child], method: :delete, remote: true %></td>
+<%= content_tag_for(:li, child) do %>
+    <%= link_to "#{child.first} #{child.last} #{child.age}", edit_site_child_path(@site, child) %>
 <% end %>

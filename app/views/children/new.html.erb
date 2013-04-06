@@ -1,2 +1,12 @@
-<h1>Child#new</h1>
-<p>Find me in app/views/child/new.html.erb</p>
+<%= render 'sidebar' %>
+
+<h1>Add a Child</h1>
+<%= form_for([@site, @child], remote: true) do |f| %>
+    <%= f.label "First Name" %>
+    <%= f.text_field :first %>
+    <%= f.label "Last Name" %>
+    <%= f.text_field :last %>
+    <%= f.label "Age" %>
+    <%= f.number_field :age %>
+    <%= f.submit %>
+<% end %>

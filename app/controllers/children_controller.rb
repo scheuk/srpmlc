@@ -32,6 +32,10 @@ class ChildrenController < ApplicationController
   def show
   end
 
+  def edit
+    @child = @site.children.find(params[:id])
+  end
+
   def load_child
     @site = Site.find(params[:site_id])
     @children = @site.children.all

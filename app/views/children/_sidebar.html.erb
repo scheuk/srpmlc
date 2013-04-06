@@ -1,0 +1,10 @@
+<% content_for :sidebar do %>
+    <div id='child_nav'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Children</li>
+        <li><%=link_to 'Add Child', new_site_child_path %></li>
+        <li class='divider'></li>
+        <%= render @children %>
+      </ul>
+    </div>
+<% end %>

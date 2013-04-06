@@ -1,0 +1,96 @@
+<%= render 'sidebar' %>
+
+<h1><%= @child.first %> <%= @child.last %></h1>
+
+<div span=1 class="pull-left"><p><a href="#">Previous Week</a></p></div>
+<div span=1 class="pull-right"><p><a href="#">Next Week</a></p></div>
+<form>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Number of 1:1 and small group sessions</th>
+    <th>Minutes of 1:1 and small group sessions</th>
+    <th></th>
+  </tr>
+  <tbody>
+  <tr>
+    <th>2013-01-07</th>
+    <th>Monday</th>
+    <th>3</th>
+    <th>40</th>
+    <th>edit</th>
+  </tr>
+  <tr>
+    <th>2013-01-08</th>
+    <th>Tuesday</th>
+    <th></th>
+    <th></th>
+    <th>edit</th>
+  </tr>
+  <tr>
+    <th>2013-01-09</th>
+    <th>Wednesday</th>
+    <th>5</th>
+    <th>65</th>
+    <th>edit</th>
+  </tr>
+  <tr>
+    <th>2013-01-10</th>
+    <th>Thursday</th>
+    <th>5</th>
+    <th>90</th>
+    <th>edit</th>
+  </tr>
+  <tr></tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th><input type="text" name="date"></th>
+      <th></th>
+      <th><input type="number" name="group_name"></th>
+      <th><input type="number" name="group+min"></th>
+      <th><input name="commit" type="submit" value="Create Day"></th>
+    </tr>
+  </tbody>
+</table>
+</form>
+<br>
+<h2>Assessments</h2>
+<form>
+<table class="table">
+  <tbody>
+  <tr>
+    <th></th>
+    <th>Test Level</th>
+    <th>BOS (Beginning)</th>
+    <th>MOS (Middle)</th>
+    <th>EOS (End)</th>
+  </tr>
+  <tr>
+    <th>WPM Test</th>
+    <th><input type="number" name="test_test"></th>
+    <th><input type="number" name="test_bos"></th>
+    <th><input type="number" name="test_mos"></th>
+    <th><input type="number" name="test_eos"></th>
+  </tr>
+  <tr>
+    <th>Sight Word Test</th>
+    <th><input type="number" name="test_test"></th>
+    <th><input type="number" name="test_bos"></th>
+    <th><input type="number" name="test_mos"></th>
+    <th><input type="number" name="test_eos"></th>
+  </tr>
+  <tr>
+    <th>Read Attitude Test</th>
+    <th>N/A</th>
+    <th><input type="number" name="test_bos"></th>
+    <th><input type="number" name="test_mos"></th>
+    <th><input type="number" name="test_eos"></th>
+  </tr>
+  <tr>
+    <th><input name="commit" type="submit" value="Submit Assessment Scores"></th>
+  </tr>
+  </tbody>
+</table>
+</form>

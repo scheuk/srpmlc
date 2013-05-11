@@ -1,5 +1,30 @@
 <%= render 'sidebar' %>
-
-<h1>Select a Child</h1>
+<h1>Attendance</h1>
+<table class="table table-striped">
+    <thead>
+        <th>Child</th>
+        <th>Age</th>
+        <th>Assessment</th>
+        <th>Monday 5/6</th>
+        <th>Tuesday 5/7</th>
+        <th>Wednesday 5/8</th>
+        <th>Thursday 5/9</th>
+        <th>Friday 5/10</th>
+    </thead>
+  <tbody>
+  <% @attendance_records.each do |ar| %>
+    <tr>
+      <td><%= ar.child_id %></td>
+      <td><%= ar.date %></td>
+      <td><%= ar.session %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106030630) do
+ActiveRecord::Schema.define(:version => 20130422013706) do
+
+  create_table "attendances", :force => true do |t|
+    t.date     "date"
+    t.integer  "session"
+    t.time     "time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "child_id"
+  end
+
+  add_index "attendances", ["child_id"], :name => "index_attendances_on_child_id"
 
   create_table "children", :force => true do |t|
     t.string   "first"

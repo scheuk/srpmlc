@@ -1,0 +1,28 @@
+<h1>Listing attendances</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attendances.each do |attendance| %>
+  <tr>
+    <td><%= attendance.child_id %></td>
+    <td><%= attendance.date %></td>
+    <td><%= attendance.session %></td>
+    <td><%= attendance.time %></td>
+    <td><%= link_to 'Show', site_attendance_path(@site, attendance) %></td>
+    <td><%= link_to 'Edit', edit_site_attendance_path(@site, attendance) %></td>
+    <td><%= link_to 'Destroy', site_attendance_path(@site, attendance), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attendance', new_site_attendance_path(@site) %>

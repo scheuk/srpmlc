@@ -11,6 +11,7 @@ Srpmlc::Application.routes.draw do
   resources :sites do
     resources :site_records
     resources :children
+    resources :attendances
   end
 
   # The priority is based upon order of creation:

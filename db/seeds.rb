@@ -18,3 +18,9 @@ user.add_role :admin
 user2 = User.find_or_create_by_email :firstname => 'Second', :lastname => 'User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
 puts 'user: ' << user2.email
 user2.add_role :VIP
+
+site = Site.create :sitename => 'SiteOne', :supervisor => 'SiteOne Supervisor'
+puts 'site: ' << site.sitename
+
+user.sites << site
+user2.sites << site

@@ -3,8 +3,11 @@ class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
   def index
-    #@attendances = Attendance.thisweek.find_all_by_child_id(@children)
-    @attendances = Attendance.all
+    @children.each do |child|
+      @child_week = Attendance.child(child).thisweek
+    end
+    @attendances = Attendance.thisweek.find_all_by_child_id(@children)
+    #@attendances = Attendance.all
 
     respond_to do |format|
       format.html # index.html.erb

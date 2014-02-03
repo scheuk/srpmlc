@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
@@ -14,6 +15,8 @@ gem 'haml'
 gem 'simple_form'
 gem 'figaro'
 gem 'bootstrap-datepicker-rails'
+
+gem 'rails_12factor', group: :production
 
 
 gem "quiet_assets", ">= 1.0.1", :group => :development
@@ -43,9 +46,8 @@ group :test, :development do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'cucumber-rails'
 end
-
-gem 'cucumber-rails', :group => :test
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

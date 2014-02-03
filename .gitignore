@@ -20,5 +20,3 @@
 #RubyMine files
 /.idea
 /.idea/.rakeTasks
-
-*.lock
